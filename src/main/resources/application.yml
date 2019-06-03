@@ -1,0 +1,22 @@
+server:
+  port: 5000
+
+spring:
+  datasource:
+    #        For H2 persistent file store DB
+    url: jdbc:h2:file:~/workspace/personal/taskmaster/data/taskmaster;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  #    MySql DB - Running docker image locally
+  #    url: jdbc:mysql://localhost:3306/taskmaster
+  #    driver-class-name: com.mysql.jdbc.Driver
+  #    username: root
+  #    password: my-secret-pw
+  jpa:
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      path: /h2-console
+      enabled: true
